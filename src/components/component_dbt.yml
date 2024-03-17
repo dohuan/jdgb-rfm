@@ -1,0 +1,14 @@
+name: dbtRun
+description:
+  Run the dbt job
+
+implementation:
+  container:
+    image: {dbt_image} # gcr.io/awesome_company/rfm-dbt-runner:latest
+    command:
+      - dbt
+      - run
+      - --profiles-dir
+      - .
+      - --vars
+      - '{{project_id: {project_id}, dataset: {dbt_user}, run_date: {dbt_run_date}}}'

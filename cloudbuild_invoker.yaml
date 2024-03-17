@@ -1,0 +1,20 @@
+steps:
+  - id: 'build_invoker_image'
+    name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - --file=deploy/Docker/invoker/Dockerfile
+      - --build-arg=GOOGLE_APPLICATION_CREDENTIALS=${_GOOGLE_APPLICATION_CREDENTIALS}
+      - --build-arg=PROJECT_ID=${_PROJECT_ID}
+      - --tag=${_IMAGE_NAME_INVOKER}:${_TAG}
+      - .
+substitutions:
+  _TAG: <place_holder>
+  _GOOGLE_APPLICATION_CREDENTIALS: <place_holder>
+  _PROJECT_ID: <place_holder>
+  _IMAGE_NAME_INVOKER: <place_holder>
+timeout: 3600s
+images:
+  ${_IMAGE_NAME_INVOKER}:${_TAG}
+options:
+  logging: CLOUD_LOGGING_ONLY

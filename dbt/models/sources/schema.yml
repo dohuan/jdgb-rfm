@@ -1,0 +1,14 @@
+#   "<database>"."<schema>"."<table>"
+version: 2
+
+sources:
+  - name: BI_order_summary
+    database: awesome_company
+    schema: src_awesome_company_mit
+    tables:
+      - name: order_summary
+        identifier: BI_order_summary__order_summary
+      - name: customer_summary_lifetime
+        identifier: BI_customer_summary__customer_summary_lifetime
+      - name: customer_summary_last12M
+        identifier: BI_customer_summary__customer_summary_last12M

@@ -1,0 +1,6 @@
+
+version: 2
+
+models:
+  - name: customer_transactions
+    description: "Feature engineering - customer transactions"

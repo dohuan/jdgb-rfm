@@ -1,0 +1,1 @@
+bucket = "awesome_company-rfm-terraform-state"

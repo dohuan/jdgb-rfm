@@ -1,0 +1,14 @@
+rfm:
+  outputs:
+    main:
+      dataset: "{{ var('dataset') }}"
+      fixed_retries: 1
+      keyfile: /dbt/gcloud-api-key.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: "{{ var('project_id') }}"
+      threads: 4
+      timeout_seconds: 300
+      type: bigquery
+  target: main
